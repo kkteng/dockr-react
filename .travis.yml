@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t kkteng/dockr-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true kkteng/dockr-react npm run test
