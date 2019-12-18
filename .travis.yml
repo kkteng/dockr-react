@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true kkteng/dockr-react npm run test
+
+deploy:
+  edge: true
+  provider: elasticbeanstalk
+  region: "ap-southeach-1"
+  app: "dockr-react"
+  env: "DockrReact-env"
+  bucket_name: "elasticbeanstalk-ap-southeast-1-618300318837"
+  bucket_path: "dockr-react"
+  on:
+    branch: master 
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
