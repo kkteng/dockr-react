@@ -11,7 +11,7 @@ script:
 deploy:
   edge: true
   provider: elasticbeanstalk
-  region: "ap-southeach-1"
+  region: "ap-southeast-1"
   app: "dockr-react"
   env: "DockrReact-env"
   bucket_name: "elasticbeanstalk-ap-southeast-1-618300318837"
